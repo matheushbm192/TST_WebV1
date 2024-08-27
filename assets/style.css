@@ -1,37 +1,77 @@
-body {
-    background-color: blue;
-    display: grid;
-    grid:
-    "header header header header"
-    "main main main aside"
-    "main main main aside"
-    "main main main aside"
-    "footer footer footer footer";
-
-    grid-template-columns: 28.33% 28.33% 28.33% 15% ;
-    grid-template-rows: 10% 20% 20% 20% 30%;
-    height: 100vh;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
     width: 100vw;
-    gap: 2.5%;
+    height: 100vh;
+}
+body {
+   width: 100%;
+   height: 100%;
+   
 }
 
 header {
-    grid-area: header;
+   height: 10%;
+   width: 100%;
     
 }
 header > section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    /* padding: 0% 10% 0% 0%; */
     
 }
+header > section > div.logo,
+header > section > div.pesquisa,
+header > section > div.titulo  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header > section div:nth-child(1),
+header > section div:nth-child(2) {
+    order: -1;
+}
+
+header > section div:nth-child(3) {
+    order: 1;
+    margin-inline-start: auto;
+}
+
+/* header > section > div.pesquisa{
+    
+} */
 
 main{
     grid-area: main;
-
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
+main > section > div.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+main > section > div.card > figure.status > img {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+
+
 aside{
-    grid-area: aside;
+   
 }
 
 footer{
-    grid-area: footer;
 }
