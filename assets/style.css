@@ -1,16 +1,25 @@
+@font-face {
+    font-family: 'Oswald-Regular';
+    src: url('./Oswald/Oswald-VariableFont_wght.ttf');
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Oswald-Regular';
+    font-weight: 500;
 }
+
 html {
     width: 100vw;
     height: 100vh;
 }
+
 body {
     display: grid;
     
-    grid-template-columns: 45% 45% 10%;
+    grid-template-columns: 45% 40% 15%;
     grid-template-rows: 10% 30% 30% 30%;
     grid-template-areas:
     'header header header'
@@ -29,6 +38,7 @@ header {
    width: 100%;
     
 }
+
 header > section {
     background-color: #292c4d;
     display: flex;
@@ -39,6 +49,7 @@ header > section {
     padding: 0% 4% 0% 2%; 
     
 }
+
 header > section > div.logo,
 header > section > div.pesquisa {
     display: flex;
@@ -46,21 +57,24 @@ header > section > div.pesquisa {
     justify-content: center;
 }
 
-header > section > div.logo > img{
+header > section > div.logo > img {
     max-width: 250px;
     
 } 
 
 
 
-main{
+main {
     grid-area: main;
     display: grid;
-
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 30% 30% 30%;
+    grid-auto-flow: d;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 20%));
+    grid-template-rows: 32% 32% 32%;
     column-gap: 3%;
     row-gap: 3%;
+    row-gap: 3%;
+    box-sizing:inherit
+    
    
    
 }
@@ -69,6 +83,7 @@ main > section {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 main > section > div.card {
@@ -76,23 +91,55 @@ main > section > div.card {
     flex-direction: column;
     align-items: center;
     padding: 3%;
-    background-color: aquamarine;
-    
+    background-color: rgba(167, 211, 167, 0.436);
+    border-radius: 30px 30px;
+    min-height: 100%;
+    border: 4px solid #00631f;
+    box-sizing: border-box;
 }
 
+main > section > div.card > figure.status {
+    padding: 2%;
+}
 main > section > div.card > figure.status > img {
     max-width: 50px;
     max-height: 50px;
 }
 
+main > section > div.card > div.evento {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 
-aside{
+aside {
    grid-area: aside;
    display: flex;
 }
 
-footer{
+footer {
     display: flex;
     grid-area: footer;
+}
+
+.comunicando {
+    
+  /* background-color: rgba(101, 210, 101, 0.782) ; */
+  
+}
+
+.caminhao {
+
+    background-image: url(./icons/caminhão50.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 100%;
+    z-index: 1;
+    
+   
+    
+
 }
